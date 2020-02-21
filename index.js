@@ -1,6 +1,9 @@
 const express = require('express');
+const Sequelize = require('sequelize')
 const server = express();
 require('dotenv').config();
+
+const sequelize = new Sequelize('database', '')
 
 const port = process.env.PORT;
 
