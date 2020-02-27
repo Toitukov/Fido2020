@@ -1,15 +1,22 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Project Fido2020, Registration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>FidoNet2020</h1>
     </header>
     <main>
+        <% if (session.error) { %>
+            <section class="error">
+                <%= session.error %>
+                <% delete session.error; %>
+            </section>
+        <% } %>
         <form action="/register" method="POST">
             <label>
                 Login:<br>
@@ -29,5 +36,6 @@
     <footer>
         &copy; 2020
     </footer>
+    <!-- TODO: Add scripts to check for correctly repeated passwords -->
 </body>
 </html>
